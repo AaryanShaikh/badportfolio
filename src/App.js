@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <div className="header">
+        <div className="logo">
+          <img src="./res/load.gif" alt="" />
+        </div>
+        <div className="nav">
+        </div>
+        <div className="ham"></div>
+      </div>
     </div>
   );
 }
