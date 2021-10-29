@@ -1,3 +1,50 @@
 .header {
     background: #122333;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    ;
+}
+
+.header .logo {}
+
+.header .logo img {
+    height: 7vh;
+    border: 3px solid aliceblue;
+    border-radius: 50%;
+}
+
+.header .nav {
+    display: flex;
+    border: solid;
+    width: 50vw;
+    justify-content: space-evenly;
+}
+
+.header .nav p {
+    color: #eef6fd;
+}
+
+.header .ham {
+    height: 32%;
+    width: 3vw;
+    position: relative;
+}
+
+.header .ham::before {
+    content: '';
+    position: absolute;
+    height: 20%;
+    background: aliceblue;
+    width: 100%;
+}
+
+.header .ham::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: aliceblue;
+    height: 20%;
+    bottom: 0;
 }
