@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <div className="header">
         <div className="logo">
-          <img src="./res/load.gif" alt="" />
+          <img src="https://github.com/AaryanShaikh/badportfolio/blob/main/src/res/load.gif?raw=true" alt="" />
         </div>
         <div className="nav">
         </div>
