@@ -1,0 +1,11 @@
+.home {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home .center {
+    border: solid;
+    height: 90%;
+}

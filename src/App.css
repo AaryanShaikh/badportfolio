@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Quicksand:wght@500&display=swap');
+
+/* Header */
+
 .header {
     background: #122333;
     height: 10vh;
@@ -7,7 +11,7 @@
     ;
 }
 
-.header .logo {}
+/* Header-Logo */
 
 .header .logo img {
     height: 7vh;
@@ -15,36 +19,118 @@
     border-radius: 50%;
 }
 
+/* Header-Logo closed */
+/* Header-Nav */
+
 .header .nav {
     display: flex;
-    border: solid;
     width: 50vw;
     justify-content: space-evenly;
 }
 
 .header .nav p {
     color: #eef6fd;
+    cursor: pointer;
+    font-family: 'Play', sans-serif;
+    font-size: 2.7vh;
 }
 
-.header .ham {
-    height: 32%;
-    width: 3vw;
+.header .nav p:hover span {
+    color: #2eac68;
+    text-shadow: 0px 0px 3px #5ce09a,
+        0px 0px 2px #86e9b4;
+}
+
+.header .nav p span {
+    transition: .5s ease;
+    font-size: 3vh;
+}
+
+/* Header-Nav closed */
+/* Header-Ham */
+
+.header ul {
     position: relative;
+    width: 2vw;
+    height: 8vh;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
 }
 
-.header .ham::before {
-    content: '';
+.header ul li {
+    list-style: none;
     position: absolute;
-    height: 20%;
-    background: aliceblue;
-    width: 100%;
+    transform: translateY(-50%);
+    width: 70%;
+    height: 6px;
+    background: #eef6fd;
+    transition: 1s;
+    border-radius: 3px;
 }
 
-.header .ham::after {
+.header ul li:nth-of-type(1) {
+    top: 30%;
+    left: 15%;
+    transition-delay: 1s;
+    opacity: 1;
+}
+
+.header ul li:nth-of-type(2) {
+    top: 50%;
+    right: 15%;
+    transition-delay: 0s;
+    width: 50%;
+    background: #2eac68;
+}
+
+.header ul li:nth-of-type(3) {
+    top: 70%;
+    right: 15%;
+    transition-delay: 1s;
+    opacity: 1;
+}
+
+.header ul.active li:nth-of-type(1) {
+    left: 100%;
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.header ul.active li:nth-of-type(2) {
+    transform: translateY(-50%) rotate(405deg);
+    transition-delay: .5s;
+    width: 70%;
+}
+
+.header ul.active li:nth-of-type(3) {
+    right: 100%;
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.header ul li:nth-of-type(2)::before {
     content: '';
     position: absolute;
+    top: -150px;
+    left: 0;
     width: 100%;
-    background: aliceblue;
-    height: 20%;
-    bottom: 0;
+    height: 100%;
+    background: #2eac68;
+    transform: rotate(90deg);
+    transition: 1s;
+    transition-delay: .5s;
+    border-radius: 3px;
 }
+
+.header ul.active li:nth-of-type(2)::before {
+    top: 0;
+    transition-delay: 1s;
+}
+
+.home {
+    height: 90vh;
+    background: #122333;
+}
+
+/* Header-Ham closed */
