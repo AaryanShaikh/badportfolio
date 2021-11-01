@@ -17,21 +17,48 @@ export default class App extends Component {
       isHamActive: !this.state.isHamActive
     })
   }
+  componentDidMount = () => {
+    window.mouseFollow()
+  }
+  makeCircleVanish = () => {
+    document.getElementById("mouse-circle").style.opacity = "0"
+  }
+  makeCircleAppear = () => {
+    document.getElementById("mouse-circle").style.opacity = "1"
+  }
+  makeCircleBigger = () => {
+    document.getElementById("mouse-circle").style.height = "60px"
+    document.getElementById("mouse-circle").style.width = "60px"
+    document.getElementById("mouse-circle").style.borderRadius = (this.state.isHamActive) ? "50%" : "10%"
+  }
+  makeCircleSmall = () => {
+    document.getElementById("mouse-circle").style.height = "30px"
+    document.getElementById("mouse-circle").style.width = "30px"
+    document.getElementById("mouse-circle").style.borderRadius = "50%"
+  }
+  makeCircleBorder = (e) => {
+    e.target.style.border = "3px solid #2eac68"
+    document.getElementById("mouse-circle").style.opacity = "0"
+  }
+  remCircleBorder = (e) => {
+    e.target.style.border = "3px solid aliceblue"
+    document.getElementById("mouse-circle").style.opacity = "1"
+  }
   render() {
     return (
       <div className="App" >
         <Router>
           <div className="header">
             <div className="logo">
-              <img src="https://github.com/AaryanShaikh/badportfolio/blob/main/src/res/logo.png?raw=true" alt="" />
+              <img src="https://github.com/AaryanShaikh/badportfolio/blob/main/src/res/logo.png?raw=true" alt="" onMouseOver={this.makeCircleBorder} onMouseOut={this.remCircleBorder} />
             </div>
-            <div className="nav">
-              <Link to="/"><p><span>H</span>ome</p></Link>
-              <Link to="/about"><p><span>A</span>bout</p></Link>
-              <p><span>P</span>rojects</p>
-              <p><span>C</span>ontact</p>
+            <div className={this.state.isHamActive ? "nav" : "nav hide"}>
+              <Link to="/" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>H</span>ome</p></Link>
+              <Link to="/about" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>A</span>bout</p></Link>
+              <Link to="/projects" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>P</span>rojects</p></Link>
+              <Link to="/contact" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>C</span>ontact</p></Link>
             </div>
-            <ul onClick={this.hamToggle} className={this.state.isHamActive ? "active" : ""}>
+            <ul onClick={this.hamToggle} className={this.state.isHamActive ? "active" : ""} onMouseOver={this.makeCircleBigger} onMouseOut={this.makeCircleSmall}>
               <li></li>
               <li></li>
               <li></li>

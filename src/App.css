@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Quicksand:wght@500&display=swap');
 
+body {
+    overflow: hidden;
+}
+
 /* Header */
 
 .header {
@@ -17,6 +21,7 @@
     height: 7vh;
     border: 3px solid aliceblue;
     border-radius: 50%;
+    transition: .3s ease;
 }
 
 /* Header-Logo closed */
@@ -28,11 +33,22 @@
     justify-content: space-evenly;
 }
 
+.header .nav a {
+    text-decoration: none;
+    transition: .5s ease;
+}
+
 .header .nav p {
     color: #eef6fd;
     cursor: pointer;
     font-family: 'Play', sans-serif;
     font-size: 2.7vh;
+    position: relative;
+}
+
+.header .nav.hide a {
+    transform: scale(0);
+    pointer-events: none;
 }
 
 .header .nav p:hover span {
@@ -41,8 +57,31 @@
         0px 0px 2px #86e9b4;
 }
 
-.header .nav p span {
+.header .nav a:hover p::before {
+    content: '';
+    height: 3px;
+    width: 50%;
+    background: #2eac68;
+    position: absolute;
+    bottom: -0.6vh;
+    left: 32%;
+    border-radius: 50px;
+}
+
+.header .nav a p::before {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #2eac68;
+    position: absolute;
+    bottom: -0.6vh;
+    left: 0%;
+    border-radius: 50px;
     transition: .5s ease;
+}
+
+.header .nav p span {
+    transition: .3s ease;
     font-size: 3vh;
 }
 
@@ -134,3 +173,15 @@
 }
 
 /* Header-Ham closed */
+#mouse-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: -20px 0px 0px -20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    pointer-events: none !important;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0);
+    opacity: 1;
+    transition: .1s linear;
+}

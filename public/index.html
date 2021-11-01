@@ -28,6 +28,7 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <div id="mouse-circle"></div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -38,6 +39,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  <script src="./index.umd.js"></script>
   <script src="./three.min.js"></script>
   <script src="./gsap.min.js"></script>
   <script src="./hover.js"></script>
@@ -50,6 +52,106 @@
         image2: 'main.png',
         displacementImage: 'disp.png'
       });
+    }
+
+    function typeit(event) {
+      new TypeIt("#element", {
+          speed: 100,
+          startDelay: 900
+        })
+        .type("hello there", {
+          delay: 200
+        })
+        .move(-6)
+        .delete(3)
+        .type("y")
+        .move(-2)
+        .delete(1)
+        .type("H")
+        .move(4)
+        .delete(1)
+        .type("T")
+        .move(4)
+        .type("!!")
+        .break({
+          delay: 500
+        })
+        .type("<span class='intro-name'>i am </span>")
+        .move(-4)
+        .delete(1)
+        .type("I")
+        .move(4)
+        .type("<span class='intro-name'>Cypher</span>")
+        .pause(500)
+        .move(-1)
+        .delete(5)
+        .type("<span class='intro-name'>a</span>")
+        .move(1)
+        .type("<span class='intro-name'>yan shaikh</span>")
+        .move(-5)
+        .delete(1)
+        .type("<span class='intro-name'>S</span>")
+        .move(-7)
+        .type("<span class='intro-name'>A</span>")
+        .move(null, {
+          to: "END"
+        })
+        .delete(1)
+        .break({
+          delay: 500
+        })
+        .type("frontend+React")
+        .pause(500)
+        .move(-13)
+        .delete(1)
+        .type("F")
+        .move(4)
+        .type(" ")
+        .move(1)
+        .delete(1)
+        .type("E")
+        .pause(900)
+        .move(3)
+        .delete(1)
+        .type("&")
+        .pause(900)
+        .delete(1)
+        .type("<span> / </span>")
+        .move(null, {
+          to: "END"
+        })
+        .type(" Developer")
+        .pause(1000)
+        .type(".")
+        .go();
+    }
+
+    function mouseFollow(event) {
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        let mousePosX = 0,
+          mousePosY = 0,
+          mouseCircle = document.getElementById("mouse-circle");
+
+        document.onmousemove = (e) => {
+          mousePosX = e.pageX;
+          mousePosY = e.pageY;
+        };
+
+        let delay = 1,
+          revisedMousePosX = 0,
+          revisedMousePosY = 0;
+
+        function delayMouseFollow() {
+          requestAnimationFrame(delayMouseFollow);
+
+          revisedMousePosX += (mousePosX - revisedMousePosX) / delay;
+          revisedMousePosY += (mousePosY - revisedMousePosY) / delay;
+
+          mouseCircle.style.top = revisedMousePosY + "px";
+          mouseCircle.style.left = revisedMousePosX + "px";
+        }
+        delayMouseFollow();
+      }
     }
   </script>
 </body>
