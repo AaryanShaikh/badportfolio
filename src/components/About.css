@@ -1,4 +1,19 @@
 .about {
     height: 90vh;
     background: #122333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.container {
+    width: 87%;
+    height: 80%;
+    background: #182b3c;
+    box-shadow: 0 0 20px 6px #111d2857;
+    border-radius: 19px;
+}
+
+.left {}
+
+.right {}
