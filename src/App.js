@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import About from './components/About';
+import Projects from './components/Projects';
 
 
 export default class App extends Component {
@@ -67,6 +68,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/"><Home /></Route>
             <Route path="/about"><About /></Route>
+            <Route path="/projects"><Projects /></Route>
           </Switch>
         </Router>
       </div>
