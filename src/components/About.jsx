@@ -30,7 +30,7 @@ export default class About extends Component {
             <div className="about">
                 <div className="container">
                     <div className="left">
-                        <img src="https://github.com/AaryanShaikh/badportfolio/blob/main/src/res/about.png?raw=true" alt="" onMouseOver={this.makeImgColor} onMouseOut={this.remImgColor} />
+                        <img src="/about.png" alt="" onMouseOver={this.makeImgColor} onMouseOut={this.remImgColor} />
                     </div>
                     <div className="right">
                         <h1>About Me</h1>
