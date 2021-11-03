@@ -14,6 +14,12 @@ export default class Projects extends Component {
             type: e.target.value
         })
     }
+    makeCircleBeat = () => {
+        document.getElementById("mouse-circle").classList.add("heart-beat")
+    }
+    remCircleBeat = () => {
+        document.getElementById("mouse-circle").classList.remove("heart-beat")
+    }
     render() {
         return (
             <div className="projects">
@@ -36,7 +42,7 @@ export default class Projects extends Component {
                     {
                         (this.state.type === "all") ?
                             Data.map((proj) => {
-                                return <div className="project" key={proj.id}>
+                                return <div className="project" key={proj.id} onMouseOut={this.remCircleBeat} onMouseOver={this.makeCircleBeat}>
                                     <h1>{proj.title}</h1>
                                     <p>{proj.desc}</p>
                                     <img src={proj.img} alt="" />
@@ -47,7 +53,7 @@ export default class Projects extends Component {
                                 return proj.type === this.state.type
                             })
                                 .map((proj) => {
-                                    return <div className="project" key={proj.id}>
+                                    return <div className="project" key={proj.id} onMouseOut={this.remCircleBeat} onMouseOver={this.makeCircleBeat}>
                                         <h1>{proj.title}</h1>
                                         <p>{proj.desc}</p>
                                         <img src={proj.img} alt="" />

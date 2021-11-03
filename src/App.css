@@ -57,6 +57,7 @@ body {
         0px 0px 2px #86e9b4;
 }
 
+
 .header .nav a:hover p::before {
     content: '';
     height: 3px;
@@ -184,4 +185,34 @@ body {
     box-shadow: 0 0 16px rgba(255, 255, 255, 0);
     opacity: 1;
     transition: .1s linear;
+}
+
+.heart-beat {
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        width: 30px;
+        height: 30px;
+        margin: -20px 0px 0px -20px;
+    }
+
+    50% {
+        width: 60px;
+        height: 60px;
+        margin: -30px 0px 0px -30px;
+    }
+}
+
+/* loading */
+.load {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #18181f;
 }
