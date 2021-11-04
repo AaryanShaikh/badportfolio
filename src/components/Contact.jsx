@@ -9,27 +9,18 @@ export default class Contact extends Component {
             sentText: "Send"
         }
     }
-    sentAnimation = (e) => {
-        this.clearText()
+    sentAnimation = () => {
         this.setState({
             sentText: ""
         })
-        e.target.classList.add("sent")
-        e.target.style.height = "2vh"
+        document.getElementById("submitBtn").classList.add("sent")
+        document.getElementById("submitBtn").style.height = "2vh"
         setTimeout(() => {
-            e.target.style.height = "7vh"
+            document.getElementById("submitBtn").style.height = "7vh"
             this.setState({
                 sentText: "Send"
             })
         }, 5000)
-
-    }
-    clearText = () => {
-        document.getElementById("fname").value = ""
-        document.getElementById("lname").value = ""
-        document.getElementById("email").value = ""
-        document.getElementById("phno").value = ""
-        document.getElementById("msg").value = ""
     }
     makeCircleInvert = () => {
         document.getElementById("mouse-circle").style.backdropFilter = "invert(1)"
@@ -73,7 +64,7 @@ export default class Contact extends Component {
                                 <input type="text" name="phno" placeholder="Phone Number" />
                             </div>
                             <textarea name="msg" placeholder="Pour your thoughts here..." ></textarea>
-                            <button type="submit"><span>{this.state.sentText}</span></button>
+                            <button type="submit" id="submitBtn"><span>{this.state.sentText}</span></button>
                         </form>
                     </div>
                 </div>
