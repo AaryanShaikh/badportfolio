@@ -66,7 +66,7 @@ export default class App extends Component {
           <Router>
             <div className="header">
               <div className="logo">
-                <img src="./logo.png" alt="" onMouseOver={this.makeCircleBorder} onMouseOut={this.remCircleBorder} />
+                <img src="https://github.com/AaryanShaikh/badportfolio/blob/main/public/logo.png?raw=true" alt="" onMouseOver={this.makeCircleBorder} onMouseOut={this.remCircleBorder} />
               </div>
               <div className={this.state.isHamActive ? "nav" : "nav hide"}>
                 <Link to="/" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>H</span>ome</p></Link>
