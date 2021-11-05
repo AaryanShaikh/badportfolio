@@ -69,10 +69,10 @@ export default class App extends Component {
                 <img src="/logo.png" alt="" onMouseOver={this.makeCircleBorder} onMouseOut={this.remCircleBorder} />
               </div>
               <div className={this.state.isHamActive ? "nav" : "nav hide"}>
-                <Link to="/" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>H</span>ome</p></Link>
-                <Link to="/about" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>A</span>bout</p></Link>
-                <Link to="/projects" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>P</span>rojects</p></Link>
-                <Link to="/contact" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>C</span>ontact</p></Link>
+                <Link to="badportfolio/" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>H</span>ome</p></Link>
+                <Link to="badportfolio/about" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>A</span>bout</p></Link>
+                <Link to="badportfolio/projects" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>P</span>rojects</p></Link>
+                <Link to="badportfolio/contact" onMouseOver={this.makeCircleVanish} onMouseOut={this.makeCircleAppear}><p><span>C</span>ontact</p></Link>
               </div>
               <ul onClick={this.hamToggle} className={this.state.isHamActive ? "active" : ""} onMouseOver={this.makeCircleBigger} onMouseOut={this.makeCircleSmall}>
                 <li></li>
@@ -81,10 +81,10 @@ export default class App extends Component {
               </ul>
             </div>
             <Switch>
-              <Route exact path="/"><Home /></Route>
-              <Route path="/about"><About /></Route>
-              <Route path="/projects"><Projects /></Route>
-              <Route path="/contact"><Contact /></Route>
+              <Route exact path="badportfolio/"><Home /></Route>
+              <Route path="badportfolio/about"><About /></Route>
+              <Route path="badportfolio/projects"><Projects /></Route>
+              <Route path="badportfolio/contact"><Contact /></Route>
             </Switch>
           </Router>
         </div>
