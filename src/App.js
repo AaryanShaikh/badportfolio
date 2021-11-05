@@ -81,10 +81,10 @@ export default class App extends Component {
               </ul>
             </div>
             <Switch>
-              <Route exact path="./"><Home /></Route>
-              <Route path="./about"><About /></Route>
-              <Route path="./projects"><Projects /></Route>
-              <Route path="./contact"><Contact /></Route>
+              <Route exact path="badportfolio/"><Home /></Route>
+              <Route path="badportfolio/about"><About /></Route>
+              <Route path="badportfolio/projects"><Projects /></Route>
+              <Route path="badportfolio/contact"><Contact /></Route>
             </Switch>
           </Router>
         </div>
